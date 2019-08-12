@@ -1,2 +1,45 @@
-p
-  = 's1111sds1111111ds1'
+doctype html
+html(lang='en')
+	head
+		meta
+		link(rel="stylesheet", href="build/css/normalize.css")
+		link(rel="stylesheet", href="build/css/styles.css")
+		link(href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&display=swap" rel="stylesheet")
+		title
+	body
+		header(class="header")
+			div(class="container")
+				div(class="header__inner")
+						div(class="header__logo")
+							| Mogo
+						nav(class="nav")
+							li
+								a(class="nav__link active" href='#') About
+							li
+								a(class="nav__link" href='#') Work
+							li
+								a(class="nav__link" href='#') Block
+							li
+								a(class="nav__link" href='#') Contact
+		div(class="intro")
+			div(class="container")
+				div(class="intro__inner")
+					h2(class="intro__suptitle") Creative Template
+					h1(class="intro__title") Welcome to Mogo
+					a(class="btn" href="#") Learn More
+			div(class="slider")
+				div(class="container")
+					div(class="slider__inner")
+						div(class="slider__item active")
+							span(class="slider__num") 01
+							|  Intro
+						div(class="slider__item")
+							span(class="slider__num") 02
+							|  Work
+						div(class="slider__item")
+							span(class="slider__num")  03
+							|  About
+						div(class="slider__item")
+							span(class="slider__num")  04
+							|  Contacts
+

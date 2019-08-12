@@ -1,41 +1,49 @@
 'use strict';
 
-const   gulp = require('gulp'),
-		concat = require('gulp-concat'),
-		autoprefixer = require('gulp-autoprefixer'),
-		cleanCSS = require('gulp-clean-css'),
-		del = require('del'),
-		browserSync = require('browser-sync').create(),
-		reload = browserSync.reload,
-		sourcemaps = require('gulp-sourcemaps'),
-		sass = require('gulp-sass'),
-		changed = require('gulp-changed'),
-		imagemin= require('gulp-imagemin'),
-		pug = require('gulp-pug'),
-		cache = require('gulp-cached'),
-		filesize = require('gulp-filesize'),
-		lineenc = require('gulp-line-ending-corrector');
+const gulp = require('gulp'),
+	concat = require('gulp-concat'),
+	autoprefixer = require('gulp-autoprefixer'),
+	cleanCSS = require('gulp-clean-css'),
+	del = require('del'),
+	browserSync = require('browser-sync').create(),
+	reload = browserSync.reload,
+	sourcemaps = require('gulp-sourcemaps'),
+	sass = require('gulp-sass'),
+	changed = require('gulp-changed'),
+	imagemin = require('gulp-imagemin'),
+	pug = require('gulp-pug'),
+	cache = require('gulp-cached'),
+	filesize = require('gulp-filesize'),
+	lineenc = require('gulp-line-ending-corrector'),
+	cssbeautify = require('gulp-cssbeautify'),
+	// jpegtran = require('jpegtran-bin'),
+	newer = require('gulp-newer');
+
+
+const sassFiles = [
+	// './node_modules/normalize.css/normalize.css',
+	'./src/sass/styles.sass',
+];
 
 const cssFiles = [
-	// './node_modules/normalize.css/normalize.css',
-	// './src/css/test.css',
-	'./src/sass/styles.sass',
-	'./src/sass/styles1.sass',
+	'./src/css/normalize.css',
 ];
 
 const pugFiles = [
 	'./src/pug/index.pug',
-	'./src/pug/test.pug',
 ];
 
-function pugToHtml(){
+const imgSRC = 'src/img/*';
+const imgDEST = 'build/img/';
+
+function pugToHtml() {
 	return gulp.src(pugFiles)
 		.pipe(pug({
 			pretty: true
 		}))
 		.pipe(cache('./src/pug/**/*.pug'))
-		.pipe(gulp.dest('./build/'));
-		}
+		.pipe(gulp.dest('./'));
+}
 
 exports.pugToHtml = pugToHtml;
 
@@ -46,62 +54,102 @@ exports.pugToHtml = pugToHtml;
 //         .pipe(gulp.dest('./build/css'));
 // };
 
-function styles(){
-	return gulp.src(cssFiles)
-		.pipe(sourcemaps.init({
-			loadMaps: true
-		}))
+function sassStyles() {
+	return gulp.src(sassFiles)
+		/* 	.pipe(sourcemaps.init({
+				loadMaps: true
+			})) */
 		.pipe(sass({
-			outputStyle: 'expanded'
+			outputStyle: 'compressed'
 		}).on('error', sass.logError))
-		.pipe(concat('all.css'))
+		// .pipe(concat('all.css'))
 		.pipe(autoprefixer({
-			cascade: false
+			cascade: false,
+			grid: true
 		}))
+
 		.pipe(cleanCSS({
 			level: 0
 		}))
 		.pipe(sourcemaps.write('./'))
 		.pipe(lineenc())
+		.pipe(cssbeautify())
 		.pipe(gulp.dest('./build/css/'))
 		.pipe(browserSync.stream());
 }
 
-function scripts(){
+function cssStyles() {
+	return gulp.src(cssFiles)
+		.pipe(gulp.dest('./build/css/'))
+}
+
+function scripts() {
 
 }
 
-function watch(){
+function images() {
+  return gulp.src(imgSRC)
+  .pipe(changed(imgDEST))
+      .pipe( imagemin([
+        imagemin.gifsicle({interlaced: true}),
+        imagemin.jpegtran({progressive: true}),
+        imagemin.optipng({optimizationLevel: 5})
+      ]))
+      .pipe( gulp.dest(imgDEST));
+}
+
+
+/* function images() {
+	return gulp
+		.src('./src/img/*')
+		.pipe(newer('./src/img/*'))
+		.pipe(
+			imagemin([
+				imagemin.gifsicle({
+					interlaced: true
+				}),
+				imagemin.jpegtran({
+					progressive: true
+				}),
+				imagemin.optipng({
+					optimizationLevel: 5
+				}),
+				imagemin.svgo({
+					plugins: [{
+						removeViewBox: false,
+						collapseGroups: true
+					}]
+				})
+			])
+		)
+		.pipe(gulp.dest("../build/img/"));
+} */
+
+function watch() {
 	browserSync.init({
 		server: {
 			baseDir: "./",
+			open: "false",
 		}
 	});
 
 	gulp.watch('./*.html').on('change', reload);
-	gulp.watch('./src/css/**/*', styles);
-	gulp.watch('./src/sass/**/*.sass', styles);
+	gulp.watch('./src/css/**/*', cssStyles);
+	gulp.watch('./src/sass/**/*.sass', sassStyles);
 	gulp.watch('./src/pug/**/*.pug', pugToHtml);
-	gulp.watch('./src/img', imgmin);
+	gulp.watch('./src/img/**/*', images);
 }
 
-function clean(){
+function clean() {
 	return del(['build/*']);
 }
 
-function imgmin(){
-	return gulp.scr('./src/img')
-	.pipe(cache('./build/img'))
-	.pipe(imagemin({
-		imagemin: jpegtran({progrresive: true}),
-		imagemin: optipng({optimizationLevel: 5})
-	}))
-	.pipe(gulp.dest('./build/img/'))
-}
 
-exports.styles = styles;
+
+exports.sassStyles = sassStyles;
+exports.cssStyles = cssStyles;
 exports.scripts = scripts;
-exports.imgmin = imgmin;
+exports.images = images;
 module.exports.watch = watch;
 
-gulp.task('build', gulp.series(clean, gulp.parallel(styles)));
+gulp.task('build', gulp.series(clean, gulp.parallel(sassStyles, cssStyles)));
