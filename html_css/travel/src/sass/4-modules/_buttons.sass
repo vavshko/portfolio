@@ -12,3 +12,25 @@
 	&:hover
 		background-color: #fff
 		color: #333
+
+.reviews__btn
+	position: absolute
+	top: 50%
+	transform: translateY(-50%)
+	z-index: 1
+	font-size: 0
+	color: transparent
+	&:after
+		content: ""
+		display: block
+		height: 16px
+		width: 16px
+		border-top: 2px solid #ccc
+		border-left: 2px solid #ccc
+		z-index: 1
+	&--prev
+		left: 0
+		transform: rotate(-45deg)
+	&--next
+		right: 0
+		transform: rotate(135deg)

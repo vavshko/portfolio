@@ -24,10 +24,14 @@
 	&__text
 		color: $base-color-gray
 		font-size: 15px
+		font-weight: normal
+		text-transform: none
 	&--devices
 		background: url('/build/img/devices-bg.jpg') center no-repeat
 		background-size: cover
 		padding-bottom: 0
+	&--gray
+		background-color: #f8f8f8
 
 .about
 	display: flex
@@ -128,3 +132,90 @@
 	display: flex
 	&__item
 		width: 50%
+		padding: 0 15px
+	& img
+		display: block
+		max-width: 100%
+		height: auto
+
+.accordion
+	$this: &;
+	&__item
+		border: 1px solid #e5e5e5
+		margin-bottom: 10px
+		&.active #{$this}__content
+			display: block
+		&.active #{$this}__header:after
+			transform: translateY(-50%) rotate(-45deg)
+			margin-top: 5px
+		&.active #{$this}__header
+			border-bottom: 1px solid #e5e5e5
+	&__header
+		border-bottom: 1px solid transparent
+		padding: 15px 20px 15px 65px
+		position: relative
+		cursor: pointer
+		&:after
+			content: ""
+			display: block
+			height: 16px
+			width: 16px
+			border-top: 2px solid #ccc
+			border-right: 2px solid #ccc
+			position: absolute
+			top: 50%
+			right: 20px
+			z-index: 1
+			transform: translateY(-50%) rotate(135deg)
+	&__content
+		padding: 15px 20px
+		font-size: 15px
+		color: $base-color-gray
+		font-style: intalic
+		font-weight: 300
+		display: none
+	&__title
+		font-size: 14px
+		color: $base-color-dark
+		text-transform: uppercase
+	&__icon
+		position: absolute
+		top: 50%
+		left: 20px
+		z-index: 1
+		transform: translateY(-50%)
+
+.reviews
+	padding: 0 110px
+	position: relative
+	&__item
+		min-height: 210px
+		padding-left: 255px
+		position: relative
+	&__photo
+		width: 210px
+		height: 210px
+		border: 2px solid $base-color-teal
+		border-radius: 50%
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+	&__text
+		font-style: italic
+		margin-bottom: 15px
+		color: $base-color-gray
+		font-size: 24px
+		font-weight: 300
+	&__author
+		font-size: 24px
+		color: #000000
+		font-family: 'Kaushan Script', cursive
+		&:before
+			content: ""
+			display: inline-block
+			vertical-align: middle
+			width: 60px
+			height: 3px
+			margin-right: 10px
+			background-color: $base-color-pink
