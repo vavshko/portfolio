@@ -33,8 +33,8 @@ const pugFiles = [
 	'./src/pug/index.pug',
 ];
 
-const imgSRC = 'src/img/*';
-const imgDEST = 'build/img/';
+const imgSRC = 'src/img/**/*';
+const imgDEST = './build/img/';
 
 function pugToHtml() {
 	return gulp.src(pugFiles)
@@ -137,7 +137,7 @@ function watch() {
 	gulp.watch('./src/css/**/*', cssStyles);
 	gulp.watch('./src/sass/**/*.sass', sassStyles);
 	gulp.watch('./src/pug/**/*.pug', pugToHtml);
-	gulp.watch('./src/img/**/*', images);
+	gulp.watch('./src/img/**/*.{jpg,jpeg,png}', images);
 }
 
 function clean() {
