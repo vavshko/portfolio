@@ -32,23 +32,29 @@
 		padding-bottom: 0
 	&--gray
 		background-color: #f8f8f8
-
+	&--clients
+		background: #f5f5f5 url('/build/img/clients-bg.jpg') center no-repeat
+		background-size: cover
 .card
 	display: flex
 	justify-content: space-between
 	margin-top: 80px
 	margin-bottom: 80px
-	$this: &;
-	&__item
-		width: 380px
-		position: relative
+	$this: &
+	&__inner
 		background-color: $base-color-teal
-		&:hover #{$this}__img img
-			opacity: .1
+		position: relative
 		&:hover #{$this}__img
 			transform: translate3d(-10px, -10px, 0)
 		&:hover #{$this}__text
 			opacity: 1
+		&:hover #{$this}__img img
+			opacity: .1
+	&__item
+		width: 380px
+
+
+
 		& img
 			display: block
 			transition: opacity .1s linear
@@ -71,7 +77,19 @@
 		width: 100%
 		opacity: 0
 		transition: opacity .2s linear
-
+	&__info
+		margin-top: 20px
+		text-align: center
+	&__name
+		text-transform: uppercase
+		margin-bottom: 5px
+		color: $base-color-dark
+		font-size: 14px
+	&__prof
+		color: $base-color-gray
+		font-size: 15px
+		font-style: italic
+		font-weight: 300
 .statistics
 	background-color: $base-color-teal
 
@@ -139,7 +157,7 @@
 		height: auto
 
 .accordion
-	$this: &;
+	$this: &
 	&__item
 		border: 1px solid #e5e5e5
 		margin-bottom: 10px
@@ -219,3 +237,142 @@
 			height: 3px
 			margin-right: 10px
 			background-color: $base-color-pink
+
+.social
+	display: flex
+	justify-content: center
+	&__item
+		background-color: $base-color-yellow
+		border-right: 1px solid $base-color-pink
+		text-decoration: none
+		color: $base-color-pink
+		font-size: 30px
+		padding: 12px 10px
+		line-height: 1
+		width: 55px
+		height: 55px
+		transition: background .1s linear, color .1s linear
+		&:last-child
+			border-right: 0
+		&:hover
+			color: #fff
+			background-color: $base-color-pink
+
+.logos
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+.works
+	$this: &
+	display: flex
+	&__col
+		flex: 1 1 0
+	&__item
+		position: relative
+		background: linear-gradient(to bottom, $base-color-pink, $base-color-yellow)
+		&:hover #{$this}__image
+			opacity: .1
+		&:hover #{$this}__info
+			opacity: 1
+	&__image
+		transition: opacity .1s linear
+		display: block
+		max-width: 100%
+		height: auto
+	&__info
+		width: 100%
+		text-align: center
+		color: $base-color-white
+		padding: 0 15px
+		position: absolute
+		opacity: 0
+		top: 50%
+		left: 0
+		transform: translate3d(0, -50%, 0)
+		transition: opacity .2s linear
+		z-index: 1
+	&__title
+		font-size: 14px
+		text-transform: uppercase
+		margin-bottom: 5px
+	&__text
+		fomt-size: 15px
+		font-weight: 300
+		font-style: italic
+
+.clients
+	display: flex
+	flex-wrap: wrap
+	margin-top: 70px
+	&__item
+		width: 50%
+		padding: 0 45px 0 175px
+		position: relative
+		margin-bottom: 60px
+	&__photo
+		top: 0
+		left: 40px
+		z-index: 1
+		position: absolute
+		width: 110px
+		height: 110px
+		border-radius: 50%
+	&__name
+		font-size: 14px
+		color: $base-color-dark
+		text-transform: uppercase
+		margin-bottom: 5px
+	&__prof
+		color: $base-color-dark
+		font-size: 15px
+		font-style: italic
+		font-weight: 700
+	&__text
+		font-size: 15px
+		color: $base-color-gray
+		&:before
+			content: ""
+			display: block
+			height: 3px
+			width: 60px
+			background-color: $base-color-pink
+			margin: 15px 0
+
+.blog
+	display: flex
+	&__item
+		width: 30%
+	&__header
+		position: relative
+		margin-bottom: 14px
+	&__photo
+		display: block
+		max-width: 100%
+		height: auot
+	&__date
+		position: absolute
+		bottom: 10px
+		padding: 10px 20px
+		text-align: center
+		left: -10px
+		z-index: 1
+		color: $base-color-white
+		font-size: 15px
+		font-style: italic
+		background-color: $base-color-teal
+		&--day
+			font-size: 30px
+			font-weight: 700
+			font-style: normal
+			line-height: 1
+	&__title
+		margin-bottom: 10px
+		font-size: 14px
+		color: $base-color-dark
+		text-transform: uppercase
+		& a
+			color: inherit
+			text-decoration: none
+			&:hover
+				text-decoration: underline
