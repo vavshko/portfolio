@@ -68,7 +68,7 @@ li .nav__link.active:after {
 }
 
 .section {
-    padding: 40px 0
+    padding: 80px 0
 }
 
 .section__header {
@@ -133,8 +133,7 @@ li .nav__link.active:after {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    margin-top: 80px;
-    margin-bottom: 80px
+    margin: 80px -15px 0
 }
 
 .card__inner {
@@ -156,7 +155,8 @@ li .nav__link.active:after {
 }
 
 .card__item {
-    width: 380px
+    width: 33.33333%;
+    padding: 0 15px
 }
 
 .card__item img {
@@ -176,7 +176,10 @@ li .nav__link.active:after {
 
 .card__img img {
     -webkit-transition: opacity .1s linear;
-    transition: opacity .1s linear
+    transition: opacity .1s linear;
+    display: block;
+    max-width: 100%;
+    height: auto
 }
 
 .card__text {
@@ -1124,4 +1127,68 @@ hr {
 span.slider__num {
     font-size: 24px;
     font-weight: 700
+}
+
+@media (max-width: 1200px) {
+    .intro__title {
+        font-size: 120px
+    }
+
+    .intro__suptitle {
+        font-size: 52px
+    }
+}
+
+@media (max-width: 990px) {
+    .intro__title {
+        font-size: 80px
+    }
+
+    .intro__suptitle {
+        font-size: 32px
+    }
+}
+
+@media (max-width: 770px) {
+    .nav {
+        display: none
+    }
+
+    .slider {
+        display: none
+    }
+
+    .slider__item.active:before {
+        width: 50%
+    }
+
+    .slider__section {
+        padding: 40px 0
+    }
+}
+
+@media (max-width: 575px) {
+    .intro__title {
+        font-size: 40px
+    }
+
+    .intro__suptitle {
+        font-size: 22px
+    }
+
+    .section__title {
+        font-size: 24px
+    }
+
+    .section__title:after {
+        margin: 20px auto
+    }
+
+    .section__suptitle {
+        font-size: 24px
+    }
+
+    .section__header {
+        margin-bottom: 50px
+    }
 }

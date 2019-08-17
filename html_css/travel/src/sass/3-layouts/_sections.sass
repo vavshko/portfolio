@@ -1,5 +1,5 @@
 .section
-	padding: 40px 0
+	padding: 80px 0
 	&__header
 		width: 100%
 		margin: 0 auto 50px
@@ -40,8 +40,7 @@
 .card
 	display: flex
 	justify-content: space-between
-	margin-top: 80px
-	margin-bottom: 80px
+	margin: 80px -15px 0
 	$this: &
 	&__inner
 		background-color: $base-color-teal
@@ -53,7 +52,8 @@
 		&:hover #{$this}__img img
 			opacity: .1
 	&__item
-		width: 380px
+		width: 33.33333%
+		padding: 0 15px
 
 
 
@@ -65,6 +65,9 @@
 		background: linear-gradient(to bottom, $base-color-pink, $base-color-yellow)
 		& img
 			transition: opacity .1s linear
+			display: block
+			max-width: 100%
+			height: auto
 	&__text
 		text-transform: uppercase
 		color: $base-color-white

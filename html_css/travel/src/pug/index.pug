@@ -1,7 +1,8 @@
 doctype html
 html(lang='en')
 	head
-		meta
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
 		link(rel="stylesheet", href="build/css/normalize.css")
 		link(rel="stylesheet", href="build/css/styles.css")
 		link(href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&display=swap" rel="stylesheet")
@@ -38,16 +39,16 @@ html(lang='en')
 					div(class="slider__inner")
 						div(class="slider__item active")
 							span(class="slider__num") 01
-							|  Intro
+							span(class="slider__text") Intro
 						div(class="slider__item")
 							span(class="slider__num") 02
-							|  Work
+							span(class="slider__text") Work
 						div(class="slider__item")
 							span(class="slider__num")  03
-							|  About
+							span(class="slider__text") About
 						div(class="slider__item")
 							span(class="slider__num")  04
-							|  Contacts
+							span(class="slider__text") Contacts
 		section(class="section")
 			div(class="container")
 				div(class="section__header")
@@ -56,71 +57,71 @@ html(lang='en')
 					div(class="section__text")
 						p Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus laborum alias quibusdam officia totam dolor accusantium beatae molestiae. Eaque tempore architecto non quasi error voluptatem, ipsa sint sed. Provident, tempora.
 				div(class="card")
-					div(class="card__inner")
-						div(class="card__item")
+					div(class="card__item")
+						div(class="card__inner")
 							div(class="card__img")
 								img(src="/build/img/about/1.jpg" alt="")
 							div(class="card__text") Super Team
-					div(class="card__inner")
-						div(class="card__item")
+					div(class="card__item")
+						div(class="card__inner")
 							div(class="card__img")
 								img(src="/build/img/about/2.jpg" alt="")
 							div(class="card__text") Super Team
-					div(class="card__inner")
-						div(class="card__item")
+					div(class="card__item")
+						div(class="card__inner")
 							div(class="card__img")
 								img(src="/build/img/about/3.jpg" alt="")
 							div(class="card__text") Super Team
-			div(class="statistics")
+		div(class="statistics")
+			div(class="container")
+				div(class="stat")
+					div(class="stat__item")
+						div(class="stat__count") 42
+						div(class="stat__text") Web Design Project
+					div(class="stat__item")
+						div(class="stat__count") 123
+						div(class="stat__text") Happy Clients
+					div(class="stat__item")
+						div(class="stat__count") 15
+						div(class="stat__text") Award Winner
+					div(class="stat__item")
+						div(class="stat__count") 99
+						div(class="stat__text") Cups of Tea
+					div(class="stat__item")
+						div(class="stat__count") 24
+						div(class="stat__text") Members
+		section(class="section")
 				div(class="container")
-					div(class="stat")
-						div(class="stat__item")
-							div(class="stat__count") 42
-							div(class="stat__text") Web Design Project
-						div(class="stat__item")
-							div(class="stat__count") 123
-							div(class="stat__text") Happy Clients
-						div(class="stat__item")
-							div(class="stat__count") 15
-							div(class="stat__text") Award Winner
-						div(class="stat__item")
-							div(class="stat__count") 99
-							div(class="stat__text") Cups of Tea
-						div(class="stat__item")
-							div(class="stat__count") 24
-							div(class="stat__text") Members
-			section(class="section")
-					div(class="container")
-						div(class="section__header")
-							h3(class="section__suptitle") We work with
-							h2(class="section__title") Amazing Services
-					div(class="services")
-						div(class="services__item")
-							img(class="services__icon" src="/build/img/services/photography.png" alt="")
-							div(class="services__title") Photography
-							div(class="services__text") Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-						div(class="services__item")
-							img(class="services__icon" src="/build/img/services/webdesign.png" alt="")
-							div(class="services__title") Webdesign
-							div(class="services__text") Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-						div(class="services__item")
-							img(class="services__icon" src="/build/img/services/creativity.png" alt="")
-							div(class="services__title") Creativity
-							div(class="services__text") Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-					hr
-					div(class="services")
-						div(class="services__item")
-							img(class="services__icon" src="/build/img/services/seo.png" alt="")
-							div(class="services__title") SEO
-							div(class="services__text") Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-						div(class="services__item")
-							img(class="services__icon" src="/build/img/services/css-html.png" alt="")
-							div(class="services__title") CSS/HTML
-							div(class="services__text") Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-						div(class="services__item")
-							img(class="services__icon" src="/build/img/services/digital.png" alt="")
-							div(class="services__title") Digital
-							div(class="services__text") Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+					div(class="section__header")
+						h3(class="section__suptitle") We work with
+						h2(class="section__title") Amazing Services
+				div(class="services")
+					div(class="services__item")
+						img(class="services__icon" src="/build/img/services/photography.png" alt="")
+						div(class="services__title") Photography
+						div(class="services__text") Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+					div(class="services__item")
+						img(class="services__icon" src="/build/img/services/webdesign.png" alt="")
+						div(class="services__title") Webdesign
+						div(class="services__text") Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+					div(class="services__item")
+						img(class="services__icon" src="/build/img/services/creativity.png" alt="")
+						div(class="services__title") Creativity
+						div(class="services__text") Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+				hr
+				div(class="services")
+					div(class="services__item")
+						img(class="services__icon" src="/build/img/services/seo.png" alt="")
+						div(class="services__title") SEO
+						div(class="services__text") Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+					div(class="services__item")
+						img(class="services__icon" src="/build/img/services/css-html.png" alt="")
+						div(class="services__title") CSS/HTML
+						div(class="services__text") Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+					div(class="services__item")
+						img(class="services__icon" src="/build/img/services/digital.png" alt="")
+						div(class="services__title") Digital
+						div(class="services__text") Lorem ipsum dolor sit, amet consectetur adipisicing elit.
 		section(class="section section--devices")
 						div(class="container")
 							div(class="section__header")
