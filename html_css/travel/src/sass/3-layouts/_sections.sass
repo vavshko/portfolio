@@ -41,6 +41,7 @@
 	display: flex
 	justify-content: space-between
 	margin: 80px -15px 0
+	flex-wrap: wrap
 	$this: &
 	&__inner
 		background-color: $base-color-teal
@@ -100,6 +101,7 @@
 
 .stat
 	display: flex
+	flex-wrap: wrap
 	&__item
 		flex: 1 1 0
 		padding: 70px 25px
@@ -119,11 +121,14 @@
 
 .services
 	display: flex
+	flex-wrap: wrap
 	&__item
-		flex: 1 1 0
-		padding-left: 85px
+		width: 33.333%
 		position: relative
-		padding-right: 35px
+		padding: 0 35px 40px 85px
+		margin-bottom: 40px
+		&--border
+			border-bottom: 1px solid #e5e5e5
 	&__icon
 		position: absolute
 		top: 0
@@ -145,6 +150,8 @@
 	position: relative
 	&__item
 		display: block
+		max-width: 100%
+		height: auto
 		&--iphone
 			position: absolute
 			bottom: -80px
@@ -153,6 +160,8 @@
 
 .wedo
 	display: flex
+	flex-wrap: wrap
+	margin: 0 15px
 	&__item
 		width: 50%
 		padding: 0 15px
@@ -160,7 +169,10 @@
 		display: block
 		max-width: 100%
 		height: auto
-
+	&__img
+		display: block
+		max-width: 100%
+		height: auto
 .accordion
 	$this: &
 	&__item
@@ -216,6 +228,7 @@
 		padding-left: 255px
 		position: relative
 	&__photo
+		display: block
 		width: 210px
 		height: 210px
 		border: 2px solid $base-color-teal
@@ -267,6 +280,9 @@
 	display: flex
 	justify-content: space-between
 	align-items: center
+	margin: 0 -15px
+	&__item
+		padding: 0 15px
 
 .works
 	$this: &
