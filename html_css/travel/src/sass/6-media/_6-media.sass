@@ -9,14 +9,6 @@
 			font-size: 20px
 		&__author
 			font-size: 20px
-	.stat
-		justify-content: center
-		&__item
-			flex: row
-			width: 33.333%
-			border: 0
-			&:last-child
-				border-right: 0
 	.section
 		&__item
 			width: 50%
@@ -30,11 +22,28 @@
 		&__suptitle
 			font-size: 32px
 	.reviews
+		padding: 0 60px
 		&__photo
 			width: 150px
 			height: 150px
 		&__item
 			padding-left: 175px
+		.stat
+			justify-content: center
+			&__item
+				flex: row
+				border: 0
+				width: 33.333%
+				padding-top: 30px
+				padding-bottom: 30px
+				&:last-child
+					border-right: 0
+	.services
+		&__item
+			width: 50%
+			padding-bottom: 0
+			&--border
+				border-bottom: 0
 @media(max-width: 770px)
 	.intro
 		&__title
@@ -47,9 +56,11 @@
 			position: static
 			margin: 0 auto 20px
 		&__item
-			padding-left: 175px
+			padding-left: 0
 		&__text
 			font-size: 16px
+		&__author
+			font-size: 20px
 	.nav
 		display: none
 	.slider
@@ -67,7 +78,7 @@
 			padding-bottom: 0
 	.card
 		justify-content: center
-		margin: 0
+		margin-top: 50px
 		&__item
 			flex: none
 			width: 33.33%
@@ -131,3 +142,11 @@
 		padding: 0
 		&__btn
 			top: 18%
+	.logos
+		flex-wrap: wrap
+		justify-content: center
+		&__item
+			width: 50%
+			margin-bottom: 20px
+		&__img
+			margin: 0 auto

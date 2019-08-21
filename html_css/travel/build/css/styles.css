@@ -504,6 +504,12 @@ li .nav__link.active:after {
     padding: 0 15px
 }
 
+.logos__img {
+    display: block;
+    max-width: 100%;
+    height: auto
+}
+
 .works {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1171,24 +1177,6 @@ span.slider__num {
         font-size: 20px
     }
 
-    .stat {
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center
-    }
-
-    .stat__item {
-        -webkit-box-flex: row;
-        -ms-flex: row;
-        flex: row;
-        width: 33.333%;
-        border: 0
-    }
-
-    .stat__item:last-child {
-        border-right: 0
-    }
-
     .section__item {
         width: 50%;
         padding-bottom: 0
@@ -1208,6 +1196,10 @@ span.slider__num {
         font-size: 32px
     }
 
+    .reviews {
+        padding: 0 60px
+    }
+
     .reviews__photo {
         width: 150px;
         height: 150px
@@ -1215,6 +1207,35 @@ span.slider__num {
 
     .reviews__item {
         padding-left: 175px
+    }
+
+    .reviews .stat {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center
+    }
+
+    .reviews .stat__item {
+        -webkit-box-flex: row;
+        -ms-flex: row;
+        flex: row;
+        border: 0;
+        width: 33.333%;
+        padding-top: 30px;
+        padding-bottom: 30px
+    }
+
+    .reviews .stat__item:last-child {
+        border-right: 0
+    }
+
+    .services__item {
+        width: 50%;
+        padding-bottom: 0
+    }
+
+    .services__item--border {
+        border-bottom: 0
     }
 }
 
@@ -1237,11 +1258,15 @@ span.slider__num {
     }
 
     .rewiews__item {
-        padding-left: 175px
+        padding-left: 0
     }
 
     .rewiews__text {
         font-size: 16px
+    }
+
+    .rewiews__author {
+        font-size: 20px
     }
 
     .nav {
@@ -1273,7 +1298,7 @@ span.slider__num {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
-        margin: 0
+        margin-top: 50px
     }
 
     .card__item {
@@ -1378,5 +1403,22 @@ span.slider__num {
 
     .reviews__btn {
         top: 18%
+    }
+
+    .logos {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center
+    }
+
+    .logos__item {
+        width: 50%;
+        margin-bottom: 20px
+    }
+
+    .logos__img {
+        margin: 0 auto
     }
 }
