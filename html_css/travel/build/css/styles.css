@@ -415,8 +415,11 @@ li .nav__link.active:after {
 }
 
 .reviews {
-    padding: 0 110px;
     position: relative
+}
+
+.reviews .slick-slider {
+    padding: 0 110px
 }
 
 .reviews__item {
@@ -1166,17 +1169,25 @@ li .nav__link.active:after {
     color: #333
 }
 
-.reviews__btn {
+.slick-arrow {
+    display: block;
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     z-index: 1;
     font-size: 0;
-    color: transparent
+    color: transparent;
+    border: 0;
+    background: none;
+    cursor: pointer
 }
 
-.reviews__btn:after {
+.slick-arrow:focus {
+    outline: 0
+}
+
+.slick-arrow:after {
     content: "";
     display: block;
     height: 16px;
@@ -1186,13 +1197,13 @@ li .nav__link.active:after {
     z-index: 1
 }
 
-.reviews__btn--prev {
+.slick-prev {
     left: 0;
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg)
 }
 
-.reviews__btn--next {
+.slick-next {
     right: 0;
     -webkit-transform: rotate(135deg);
     transform: rotate(135deg)
@@ -1293,6 +1304,10 @@ span.slider__num {
     }
 
     .reviews {
+        padding: 0 60px
+    }
+
+    .reviews .slick-slider {
         padding: 0 60px
     }
 
@@ -1619,7 +1634,11 @@ span.slider__num {
         padding: 0
     }
 
-    .reviews__btn {
+    .reviews .slick-slider {
+        padding: 0
+    }
+
+    .slick-arrow {
         top: 18%
     }
 
