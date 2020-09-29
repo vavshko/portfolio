@@ -1,0 +1,16 @@
+@import "reset.css";
+
+.wrapper {
+    width: 980px;
+    margin: auto;
+}
+
+.sideffbar {
+    width: 300px;
+    float: left;
+}
+
+.content {
+    width: 680px;
+    float: left;
+}
