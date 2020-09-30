@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Array print
  */
@@ -8,7 +7,6 @@ function print_arr($array)
 {
     echo "<pre>" . print_r($array, true) . "</pre>";
 }
-
 
 /**
  * Getting an array of categories
@@ -25,7 +23,6 @@ function get_cat()
     }
     return $arr_cat;
 }
-
 
 /**
  * Building a tree
@@ -45,7 +42,6 @@ function map_tree($dataset)
     return $tree;
 }
 
-
 /**
  * Дерево в строку HTML
  */
@@ -57,7 +53,6 @@ function categories_to_string($data)
     }
     return $string;
 }
-
 
 /**
  * Category display template
